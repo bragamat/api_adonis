@@ -19,11 +19,11 @@ const Route = use('Route')
 Route.post('/register', 'AuthController.register')
 Route.post('/authenticate', 'AuthController.authenticate')
 
-Route.get('/app', 'AppController.index').middleware(['auth'])
+Route.get('/app', 'AppController.index')//.middleware(['auth'])
 
 Route.group(()=>{
   Route.resource('articles', 'ArticleController')
     .apiOnly()
     .except('update')
-}).middleware('auth')
+})//.middleware('auth')
 
